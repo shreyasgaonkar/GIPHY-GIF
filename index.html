@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>GIPHY GIFs</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class="main">
+  <div class="container-fluid">
+
+    <div class="center">
+      <h1>Search for Awesome GIF! 
+        <br /> <small>Doesn't matter whether you say GIF or JIF :)</small>
+      </h1>
+
+      <form class="form-inline">
+        <label class="sr-only" for="inlineFormInputGroup">Search for Awesome GIF's</label>
+
+        <div class="row input-group">
+          <div class="input-group col-md-6 col-sm-9">
+            <input type="text" class="form-control" id="inlineFormInputGroup"  placeholder="Search for Awesome GIF's from GIPHY">
+          </div>
+          <button id="submit">Submit</button>
+        </div> <!-- end row -->
+      </form>
+
+      <input type="checkbox" id="more-options-toggle"/>
+
+      <div class="wrap">
+        <label for="more-options-toggle" class="more-options">Click for more options &nbsp;⇣</label>
+
+        <div class="options row">
+          <div class="col-sm-6" id="trending"><a href="#/">Trending</a></div>
+          <div class="col-sm-6" id="rating"><select class="selectpicker" title="Ratings" data-style="btn-primary">
+            <option value="&rating=g" disabled selected>Select Ratings</option>
+            <option value="&rating=y">Y</option>
+            <option value="&rating=g">G</option>
+            <option value="&rating=r">R</option>
+            <option value="&rating=pg">PG</option>
+            <option value="&rating=pg-13">PG-13</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+    </div><!-- end div.center -->
+
+    <!-- Display GIF's here -->
+    <div class="gif-results"></div>
+
+    <div class="load-more"><button id="load-more">Load More</button></div>
+    <h3 class="no-result text-center">No results found for that query :(</h3>
+
+
+    <div class="default-gif">
+      <a class="gif"><img src="http://i.giphy.com/3o7ZeQBhbVGnELP4bK.gif" title="Default GIF"/></a>
+    </div>
+
+
+  </div> <!-- end div container -->
+</div> <!-- end div.main -->
+
+
+<div class="loading-gif">
+  <img src="http://i.giphy.com/3o7ZeQBhbVGnELP4bK.gif" alt="Loading GIF" />
+</div>
+
+<div class="footer">
+  <p>GIF generated from <a href="https://github.com/Giphy/GiphyAPI#search-endpoint">GIPHY API</a> by <a href="https://github.com/shreyasgaonkar" target="_blank">Shreyas Gaonkar</a></p>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css";
+
+* { box-sizing: border-box; }
+
+html {
+  margin: 0; padding: 0; border: 0;
+}
+
+html, body { height: 100%; } 
+
+$blue: #004466;
+$blue-hover: #006fa6;
+
+$button-box-shadow: 0 0 5px 3px rgba(black, 0.1);
+$button-box-shadow-hover: 0 0 10px 5px rgba(black, 0.1);
+
+.main {
+  background: linear-gradient(rgba($blue,0.2), rgba($blue,0.01)); 
+
+  //Avoid Footer floating midway when there's no content
+  min-height: 100%;
+  margin-bottom: -80px;
+  padding-bottom: 40px;
+}
+
+.well {
+  border-radius: 5px;
+  padding: 40px 0;
+}
+
+div.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.form-inline {
+  margin-top: 20px;
+
+  input {
+    //min-width: 500px;
+    width: auto !important;
+    transition: all 300ms ease-in-out;
+    box-shadow: $button-box-shadow;
+
+    &:hover {
+      box-shadow: $button-box-shadow-hover;
+      transform: scale(1.01);
+      transition: all 300ms ease-in-out;
+    }
+  }
+
+  #submit {
+    height: 33px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: $blue;
+    color: white;
+    letter-spacing: 1px;
+    margin-left: -4px;
+    border-radius: 0 5px 5px 0px;
+    border: 0;
+
+    &:hover {
+      cursor: pointer;
+      background: $blue-hover;
+    }
+  }
+}
+
+.more-options {
+  margin-top: 20px;
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  cursor: pointer;
+ 
+}
+
+// More options toggle
+#more-options-toggle {
+  display: none;
+
+  + .wrap .options {
+    display: none;
+  }
+
+  &:checked + .wrap {
+    .options {
+      display: block;
+      margin-top: 20px;
+      max-width: 500px;
+    }
+  }
+
+
+}
+
+.wrap {
+  text-align: center;
+}
+
+.gif {
+  max-width: 100px;
+}
+
+div.gif-results {
+  text-align: center;
+  display: inline-block;
+
+  .gifs {
+    //display: inline-block;
+    padding: 10px;
+    height: 200px;
+    width: auto;
+    max-width: 350px;
+  }
+}
+
+.load-more {
+  //display: none;
+  text-align: center;
+
+  button {
+
+    box-shadow: $button-box-shadow;
+    display: none;
+    background: #004466;
+    border: 0;
+    color: white;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    border-radius: 2px;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 20px 0;
+    border: 1px solid transparent;
+
+    &:hover {
+      box-shadow: $button-box-shadow-hover;
+      background: #006fa6;
+      border: 1px solid rgba(black, 0.5);
+    }
+  }
+}
+
+.error {
+  border: 1px solid red !important;
+}
+
+.default-gif {
+  text-align: center;
+
+  img {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+.loading-gif {
+  display: none;
+  z-index: 100;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.no-result {
+  display: none;
+}
+
+.footer {
+  height: 40px;
+  margin: 40px 0 0 0;
+  background: rgba(black, 0.2);
+
+  p {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+
+    a:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .input-group {
+    display: inline-flex;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  .form-inline input {
+    min-width: 500px;
+  }
+
+}
