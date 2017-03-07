@@ -47,6 +47,7 @@ div.center {
   margin-top: 20px;
 }
 .form-inline input {
+  margin-top: -2px;
   width: auto !important;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
@@ -92,8 +93,22 @@ div.center {
 }
 #more-options-toggle:checked + .wrap .options {
   display: block;
-  margin-top: 20px;
   max-width: 500px;
+}
+#more-options-toggle:checked + .wrap .options hr {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.5);
+}
+
+select.form-control {
+  width: auto;
+  margin-top: -5px;
+}
+
+#trending a {
+  color: black;
+  font-size: 1.5rem;
 }
 
 .wrap {
@@ -184,6 +199,10 @@ div.gif-results .gifs {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
+  }
+
+  .form-inline input {
+    margin-top: 0;
   }
 }
 @media screen and (min-width: 768px) {

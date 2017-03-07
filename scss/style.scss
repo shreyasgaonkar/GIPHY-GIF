@@ -2,10 +2,7 @@
 
 * { box-sizing: border-box; }
 
-html {
-  margin: 0; padding: 0; border: 0;
-}
-
+html { margin: 0; padding: 0; border: 0; }
 html, body { height: 100%; } 
 
 $blue: #004466;
@@ -40,7 +37,7 @@ div.center {
   margin-top: 20px;
 
   input {
-    //min-width: 500px;
+    margin-top: -2px;
     width: auto !important;
     transition: all 300ms ease-in-out;
     box-shadow: $button-box-shadow;
@@ -68,33 +65,45 @@ div.center {
       background: $blue-hover;
     }
   }
-}
+}//end .form-inline
 
 .more-options {
   margin-top: 20px;
   text-decoration-line: underline;
   text-decoration-style: dashed;
   cursor: pointer;
- 
+
 }
 
-// More options toggle
 #more-options-toggle {
-  display: none;
+  display: none; //Hide the checkbox
 
   + .wrap .options {
-    display: none;
+    display: none; //Hide more options until checked
   }
 
   &:checked + .wrap {
     .options {
-      display: block;
-      margin-top: 20px;
+      display: block; 
       max-width: 500px;
+
+      hr {
+        margin-top: 10px;
+        margin-bottom: 30px;
+        border-top: 1px dashed rgba(black, 0.5);
+      }
     }
   }
+}//end #more-options-toggle
 
+select.form-control {
+  width: auto;
+  margin-top: -5px;
+}
 
+#trending a {
+  color: black;
+  font-size: 1.5rem;
 }
 
 .wrap {
@@ -110,7 +119,6 @@ div.gif-results {
   display: inline-block;
 
   .gifs {
-    //display: inline-block;
     padding: 10px;
     height: 200px;
     width: auto;
@@ -119,11 +127,9 @@ div.gif-results {
 }
 
 .load-more {
-  //display: none;
   text-align: center;
 
   button {
-
     box-shadow: $button-box-shadow;
     display: none;
     background: #004466;
@@ -144,7 +150,7 @@ div.gif-results {
       border: 1px solid rgba(black, 0.5);
     }
   }
-}
+} //end .load-more
 
 .error {
   border: 1px solid red !important;
@@ -186,11 +192,14 @@ div.gif-results {
       text-decoration: none;
     }
   }
-}
+} //end .footer
 
 @media screen and (max-width: 768px) {
   .input-group {
     display: inline-flex;
+  }
+  .form-inline input {
+    margin-top: 0;
   }
 }
 

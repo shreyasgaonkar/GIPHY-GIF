@@ -14,7 +14,7 @@ $(function() {
 
   $('#trending').click(function() {
     var url = 'http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC';
-    var flag = 1;
+    var flag = 1; //trending search flag
   var fetchData = $.getJSON(url, gotData);
   });
 
@@ -31,8 +31,6 @@ $(function() {
 
     else {
       $("#inlineFormInputGroup").removeClass("error");
-
-     
       
       //Generate entire URL from the user input
       var url = api+query+apiKey+lang+'&limit='+apiPagination+rating;
@@ -40,17 +38,17 @@ $(function() {
       var fetchData = $.getJSON(url, gotData);
       
     }// end check if valid input
-
   });//end submit click event
 
+  //Display more results as per request
   $('#load-more').click(function(){ 
     apiPagination+=10;
     $("#submit").click();
   });
 
-
-
 });//document ready function end
+
+
 
 function gotData(data){
   //continue if API exists
@@ -58,16 +56,18 @@ function gotData(data){
     if(data.data.length > 0) {
 
       $(".gif-results").show();
-      //$("#load-more").show();
       $('.gif-results').show();
       $('.no-result').hide();
 
+      //Remove any existing data - used to clearing out previous searches
       if($("div.gif-results img").length > 0) {
         $("div.gif-results img").remove();
       } 
 
       $('div.gif-results').addClass("well");
       $('.loading-gif').css("display", "block");
+      
+      
       //Iterate through all of the returned JSON data and append to HTML 
       for(var i=0; i<data.data.length; i++) {
 

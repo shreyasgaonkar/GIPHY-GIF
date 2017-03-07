@@ -27,7 +27,7 @@
           <div class="input-group col-md-6 col-sm-9">
             <input type="text" class="form-control" id="inlineFormInputGroup"  placeholder="Search for Awesome GIF's from GIPHY">
           </div>
-          <button id="submit">Submit</button>
+          <button title="Search" id="submit">Search</button>
         </div> <!-- end row -->
       </form>
 
@@ -37,14 +37,16 @@
         <label for="more-options-toggle" class="more-options">Click for more options &nbsp;⇣</label>
 
         <div class="options row">
-          <div class="col-sm-6" id="trending"><a href="#/">Trending</a></div>
-          <div class="col-sm-6" id="rating"><select class="selectpicker" title="Ratings" data-style="btn-primary">
-            <option value="&rating=g" disabled selected>Select Ratings</option>
-            <option value="&rating=y">Y</option>
-            <option value="&rating=g">G</option>
-            <option value="&rating=r">R</option>
-            <option value="&rating=pg">PG</option>
-            <option value="&rating=pg-13">PG-13</option>
+          <hr />
+          <div class="col-sm-6" id="trending"><a href="#/" title="Trending">↗ Trending</a></div>
+          <div class="col-sm-6" id="rating">
+            <select class="selectpicker form-control" title="Ratings">
+              <option value="&rating=g" disabled selected>Select Ratings</option>
+              <option value="&rating=y">Y</option>
+              <option value="&rating=g">G</option>
+              <option value="&rating=r">R</option>
+              <option value="&rating=pg">PG</option>
+              <option value="&rating=pg-13">PG-13</option>
             </select>
           </div>
         </div>
